@@ -7,4 +7,5 @@ The majority of fastqs were aligned using PopGLen but with the same parameters a
 ### prealign_ancientFASTQs.sh 
 This slurm script contains code used to align and merge SE and PE data from ancient salmon fish bone fastqs
 
-## 
+### georef_alignment.sh
+This slurm contains code for aligning geographic reference fastqs downloaded from SRA. 
