@@ -4,9 +4,9 @@
 #SBATCH -n 1
 #SBATCH --mem=490g
 #SBATCH -N 1
-#SBATCH --mail-user=deflami2@illinoise.edu
+#SBATCH --mail-user=<email>
 #SBATCH --mail-type=ALL
-#SBATCH -J het_noT_Sock_test
+#SBATCH -J <jobname>
 # ----------------Load Modules--------------------
 module load ANGSD/0.933-IGB-gcc-4.9.4
 module load SAMtools/1.9-IGB-gcc-4.9.4
@@ -15,12 +15,12 @@ module load Python/3.6.1-IGB-gcc-4.9.4
 # ----------------Commands------------------------
 #!/bin/bash
 
-cd /home/labs/malhi_lab/paleogenomics/deflami2/sockeye/results/angsd/GWH_noTrans
+cd <path to working directory>
 
 # Input files
-bam_filelist="/home/labs/malhi_lab/paleogenomics/deflami2/sockeye/bamlist_137indv_50percCov.txt"
-#bam_filelist="bamlist_137indv_50percCov_test.txt"
-names_filelist="namelist_137.txt"
+bam_filelist="<path to same textfile as the one used in ANGSD gl estimation for bams with > 50% coverage>"
+
+names_filelist="<path to a seperate file that contains the names of each of the samples, one name per line. This could be the same as the bam list but without the .bam extension. this file is used to keep track of names under which output is saved>"
 
 # Read BAM paths and sample names into arrays
 mapfile -t bam_paths < "$bam_filelist"
@@ -41,10 +41,7 @@ for i in "${!sample_names[@]}"; do
     echo "Processing sample: $sample"
     echo "Using BAM: $bam"
 
-    angsd -i "$bam" \
-          -anc /home/labs/malhi_lab/paleogenomics/deflami2/PopGLen_testing/20250825-salmon-aln/results/ref/sock02_scaffolds_final_20250516/sock02_scaffolds_final_20250516.fa \
-          -out "$sample" \
-          -minQ 30 -dosaf 1 -noTrans 1 -gl 1
-
-    realSFS "${sample}.saf.idx" > "${sample}.ml"
+    angsd -i "$bam" -anc <path to genome fasta> -out "$sample"  -minQ 30 -dosaf 1 -noTrans 1 -gl 1 #use noTrans for ancient DNA damage correction
+    realSFS "${sample}.saf.idx" > "${sample}.ml" # use heteroz & R code in this folder to make a table of GWH of all individuals
+    
 done
