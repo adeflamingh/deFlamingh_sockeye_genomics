@@ -6,3 +6,12 @@ This directory contains scripts associated with ANGSD and genotype likelihood es
 
 ## Input file filters:
 Only samples that had a breadth of coverage above 50% of the genome were included in GL estimation. We used alignment statistics calculated during the alignment step to ensure that this threshold was met. Further, our ANGSD GL analysis only included sites that were present in >10% of individuals (i.e., a minimum of 14 of 137 individuals). Our SNP siginificance threshold was pval 1e-2. These parameters were not as stringent as some other ancient DNA studies as we prefiltered our input data to include only individuals with > 50% of their genomes sequenced. 
+
+### ANGSD_GL_testK.sh
+This file contains the code to estimate genotype likelihoods and infer PCA and admixture across a range of Ks
+
+### GWH_perind.sh
+This code uses angsd to calculate genome wide heterozygosity per individual
+
+### heteroz_R_resultscompile.sh
+This code uses the .ml output from GWH and a R script named heteroz_ml.R (also in this directory) to compile a table of GWH for all individuals
