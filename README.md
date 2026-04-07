@@ -11,7 +11,7 @@ This repository was created to house the code associated with the different geno
 This folder contains code for aligning reads to a reference genome. Individual code descriptions can be found in the README in the folder. The README 
 also contains a general step by step protocol for basic alignement of modern and ancient DNA, including information on paramenter choices. 
 
-### Genotype Likelihoods & ANGSD
+### ANGSD (Genotype Likelihoods, PCA, GWH)
 This folder contains code associated with the estimation of genotype likelihoods in ANGSD. It also houses code for admixture analyis, PCA and Genome-Wide Heterozygocity and other associated analyses based on ANGSD genotype likelihoods. 
 
 ### Mitogenomes
