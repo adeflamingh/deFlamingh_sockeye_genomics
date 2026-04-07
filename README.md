@@ -14,5 +14,3 @@ also contains a general step by step protocol for basic alignement of modern and
 ### ANGSD (Genotype Likelihoods, PCA, GWH)
 This folder contains code associated with the estimation of genotype likelihoods in ANGSD. It also houses code for admixture analyis, PCA and Genome-Wide Heterozygocity and other associated analyses based on ANGSD genotype likelihoods. 
 
-### Mitogenomes
-This folder contains code and notes for the sockeye salmon mitogenome project where we de novo assembled early and late run salmon mitogenomes using PacBio data for one individual from each run. 
