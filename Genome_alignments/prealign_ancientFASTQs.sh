@@ -4,25 +4,20 @@
 #SBATCH -n 1
 #SBATCH --mem=16g
 #SBATCH -N 1
-#SBATCH --mail-user=deflami2@illinois.edu
+#SBATCH --mail-user=<email>
 #SBATCH --mail-type=ALL
-#SBATCH -J prealned_bam_samplename
-
-#set threads to 16
-#check that trimming and alignment parameters are consistent with PopGLen filters/parameters that you choose.
-#checked popglen, only -p and -g parameters specified, so just make sure to include the filtering options in the methods description to allow for reproduction
+#SBATCH -J <jobname>
 
 
-cd /home/labs/malhi_lab/paleogenomics/deflami2/sockeye/
-
+cd <home directory>
 #FILES/VARIABLES
 
 #files to trim, align, merge, dedup in preparation for PopGLen - insert full path so that timmed files are saved in same place, but remove extension so only file/sample name retained
 sample_name=''
 FQ1='' #SE data
-FQ1bam='filename' #hadcode bam file name without extension
+FQ1bam='filename' #hardcode bam file name without extension
 FQ2='' #PE data
-FQ2bam='filename' #hadcode bam file name without extension
+FQ2bam='filename' #hardcode bam file name without extension
 #add files as needed
 
 bamdirectory=givepathtofolder
